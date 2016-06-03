@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
@@ -13,7 +14,7 @@
         <link rel="stylesheet" href="assets/css/jquery.nouislider.min.css" type="text/css">
         <link rel="stylesheet" href="assets/css/colors/blue.css" type="text/css">
         <link rel="stylesheet" href="assets/css/user.style.css" type="text/css">
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
         <!--Import materialize.css-->
         <!-- <link type="text/css" rel="stylesheet" href="node_modules/materialize-css/bin/materialize.css"  media="screen,projection"/> -->
 
@@ -52,6 +53,42 @@
       </div>
     </div> -->
     <div id="outer-wrapper">
+
+    <div class="modal fade" id="myModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+  
+                        <div id="register" class="registrationForm">
+                            <form  action="mysuperscript.php" autocomplete="on"> 
+                                <h1> Dealer Registration </h1> 
+                                <p> 
+                                    <label for="name" class="name" data-icon="u">Your Name</label>
+                                    <input id="name" name="name" required="required" type="text" placeholder="Manish"/>
+                                </p>
+                                <p> 
+                                    <label for="location" class="location" data-icon="" > Your Location</label>
+                                    <input id="location" name="location" required="required" type="text" placeholder="Mumbai"/> 
+                                </p>
+                                <p> 
+                                    <label for="mobile" class="mobile" data-icon="" > Mobile Number</label>
+                                    <input id="mobile" name="mobile" required="required" type="text"  placeholder="9029222282"/> 
+                                </p> 
+                  <button class="submit button" type="submit" value="Sign up" data-dismiss="modal"> Sign Up </button>
+                            </form>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>  
+        </div>
+
+
+
         <!-- Inner Wrapper -->
 
         <div id="inner-wrapper" style="background: #161209 url(http://imgd2.aeplcdn.com/0x0/cw/static/landing-banners/home-top-banner.jpg) no-repeat right top;background-size: cover;height: 580px; padding-top: 1px;position: relative;">
@@ -66,26 +103,15 @@
                             <ul class="main-navigation navigation-top-header"></ul>
                           <ul class="user-area">
                               <li><a href="sign-in.html">Sign In</a></li>
-                              <li><a href="register.html"><strong>Register</strong></a></li>
+                              <li><a data-toggle="modal" data-target="#myModal"><strong>Register</strong></a></li>
                           </ul>
-                          <a href="submit.html" class="submit-item">
-                              <div class="content"><span>Submit Your Item</span></div>
-                              <div class="icon">
-                                  <i class="fa fa-plus"></i>
-                              </div>
-                          </a>
-                          <div class="toggle-navigation">
-                              <div class="icon">
-                                  <div class="line"></div>
-                                  <div class="line"></div>
-                                  <div class="line"></div>
-                              </div>
-                          </div>
                       </div>
                   </nav>
 
           </div>
 
+
+          
 
 
 
