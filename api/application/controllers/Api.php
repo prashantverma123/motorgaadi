@@ -57,8 +57,8 @@ class Api extends REST_Controller{
       function carmake_get(){
         // $id = $this->input->get();
 
-        $this->load->model('Model_CarMake');
-        $carmake= $this->Model_CarMake->get_all();
+        $this->load->model('Model_Carmake');
+        $carmake= $this->Model_Carmake->get_all();
         if(isset($carmake)){
           $this->response(array('status'=>'success','message'=>$carmake));
         }
