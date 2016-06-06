@@ -136,7 +136,7 @@ class Api extends REST_Controller{
 
          }
          else{
-           $this->response(array('status'=>'failure','message'=>$this->form_validation->get_errors_as_array()),REST_Controller::HTTP_NOT_FOUND);
+           $this->response(array('status'=>'failure','message'=>"Hi there are errors",REST_Controller::HTTP_NOT_FOUND);
          }
       }
 
