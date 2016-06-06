@@ -36,6 +36,61 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="node_modules/materialize-css/bin/materialize.js"></script>
+      <script>
+      // code for posting data to lead form api
+
+      
+
+       $(document).ready(function() {
+        $('#leadformbutton').click(function(){
+          debugger;
+          capturelead();
+        });
+
+      function capturelead(){
+        debugger;
+         var formData = {
+            'name'     : $('#name').val(),
+            'location' : $('#location').val(),
+            'mobile'    : $('#mobile').val()
+        };
+        console.log(formData);
+         $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : "http://localhost/motorgaadi/api/index.php/api/leadform",
+            data        : formData, // our data object
+            dataType    : 'json', // what type of data do we expect back from the server
+            encode          : true
+        })
+            // using the done promise callback
+            .done(function(data) {
+              debugger;
+
+                // log data to the console so we can see
+                console.log(data); 
+
+                // here we will handle errors and validation messages
+            });
+
+//         var settings = {
+//             "async": true,
+//             "crossDomain": true,
+//             "url": "http://localhost/motorgaadi/api/index.php/api/leadform",
+//             "method": "POST",            
+//             "processData": false,
+//             "contentType": false,
+//             "mimeType": "multipart/form-data",
+//             "data": formData
+//           }
+
+// $.ajax(settings).done(function (response) {
+//   console.log(response);
+// });
+      }
+    });
+
+
+    </script>
 
       <!-- <div class="cardContainer" style="width:30%;height:30%">
       <div class="card small">
@@ -64,7 +119,7 @@
         <div class="modal-body">
   
                         <div id="register" class="registrationForm">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
+                            <form  id ="leadform"  action="mysuperscript.php" autocomplete="on"> 
                                 <h1> Dealer Registration </h1> 
                                 <p> 
                                     <label for="name" class="name" data-icon="u">Your Name</label>
@@ -78,7 +133,7 @@
                                     <label for="mobile" class="mobile" data-icon="" > Mobile Number</label>
                                     <input id="mobile" name="mobile" required="required" type="text"  placeholder="9029222282"/> 
                                 </p> 
-                  <button class="submit button" type="submit" value="Sign up" data-dismiss="modal"> Sign Up </button>
+                            <button id="leadformbutton"  data-dismiss="modal" > Sign Up </button>
                             </form>
                             </div>
                         </div>
@@ -353,6 +408,7 @@
     <script>
         autoComplete();
     </script>
+    
 
     </body>
 
