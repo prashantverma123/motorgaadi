@@ -109,33 +109,38 @@
     </div> -->
     <div id="outer-wrapper">
 
+
+<!-- Registration Form -->
+
     <div class="modal fade" id="myModal" role="dialog" tabindex="-1">
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
+        <!-- <div class="modal-header"> -->
+        <!-- </div> -->
         <div class="modal-body">
   
-                        <div id="register" class="registrationForm">
-                            <form  id ="leadform"  action="mysuperscript.php" autocomplete="on"> 
-                                <h1> Dealer Registration </h1> 
-                                <p> 
-                                    <label for="name" class="name" data-icon="u">Your Name</label>
-                                    <input id="name" name="name" required="required" type="text" placeholder="Manish"/>
-                                </p>
-                                <p> 
-                                    <label for="location" class="location" data-icon="" > Your Location</label>
-                                    <input id="location" name="location" required="required" type="text" placeholder="Mumbai"/> 
-                                </p>
-                                <p> 
-                                    <label for="mobile" class="mobile" data-icon="" > Mobile Number</label>
-                                    <input id="mobile" name="mobile" required="required" type="text"  placeholder="9029222282"/> 
-                                </p> 
-                            <button id="leadformbutton"  data-dismiss="modal" > Sign Up </button>
-                            </form>
-                            </div>
+            <div class="form-style-10">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h1>Sign Up Now!<span>Sign up and join to get leads!</span></h1>
+              <form>
+              <div class="section"><span>1</span>Name &amp; Address</div>
+              <div class="inner-wrap">
+                  <label>Your Full Name <input type="text" name="name" placeholder="Manish" /></label>
+                  <label>Your Firm Name <input type="text" name="firm" placeholder="Motor Gaadi"></label>
+                  <label>Firm Location <input type="text" name="location" placeholder="Mumbai"></label>
+              </div>
+
+              <div class="section"><span>2</span>Email &amp; Phone</div>
+              <div class="inner-wrap">
+                  <label>Email Address <input type="email" name="email" /></label>
+                  <label>Phone Number <input type="text" name="phone" /></label>
+              </div>
+    <div class="button-section">
+     <input type="submit" name="Sign Up" />
+    </div>
+</form>
+</div>
                         </div>
             
                     </div>
