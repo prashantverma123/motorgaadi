@@ -1560,7 +1560,7 @@ ul.bullets li a:hover {
 
 .hero-image {
   display: table;
-  height: 700px;
+  /*height: 700px;*/
   width: 100%;
   text-align: center;
 }
@@ -1568,7 +1568,7 @@ ul.bullets li a:hover {
   text-align: left;
 }
 .hero-image.search-filter-bottom .inner {
-  vertical-align: bottom;
+  /*vertical-align: bottom;*/
 }
 .hero-image.search-filter-middle .inner {
   vertical-align: middle;
