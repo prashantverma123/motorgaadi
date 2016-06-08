@@ -4,7 +4,10 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <!-- <script async src="//code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script> -->
+
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -14,7 +17,7 @@
         <link rel="stylesheet" href="assets/css/jquery.nouislider.min.css" type="text/css">
         <link rel="stylesheet" href="assets/css/colors/blue.css" type="text/css">
         <link rel="stylesheet" href="assets/css/user.style.css" type="text/css">
-        <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <!-- <link type="text/css" rel="stylesheet" href="node_modules/materialize-css/bin/materialize.css"  media="screen,projection"/> -->
 
@@ -35,11 +38,11 @@
     <body onunload="" class="map-fullscreen page-homepage navigation-off-canvas" id="page-top">
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
       <script type="text/javascript" src="node_modules/materialize-css/bin/materialize.js"></script>
       <script>
-      // code for posting data to lead form api
 
-      
+
 
        $(document).ready(function() {
         $('#leadformbutton').click(function(){
@@ -56,57 +59,25 @@
         };
         console.log(formData);
          $.ajax({
-            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-            url         : "http://localhost/motorgaadi/api/index.php/api/leadform",
-            data        : formData, // our data object
-            dataType    : 'json', // what type of data do we expect back from the server
+            type        : 'POST',
+            url         : "http://localhost/startup/api/index.php/api/leadform",
+            data        : formData,
+            dataType    : 'json',
             encode          : true
         })
-            // using the done promise callback
+
             .done(function(data) {
-              debugger;
 
-                // log data to the console so we can see
-                console.log(data); 
-
-                // here we will handle errors and validation messages
             });
-
-//         var settings = {
-//             "async": true,
-//             "crossDomain": true,
-//             "url": "http://localhost/motorgaadi/api/index.php/api/leadform",
-//             "method": "POST",            
-//             "processData": false,
-//             "contentType": false,
-//             "mimeType": "multipart/form-data",
-//             "data": formData
-//           }
-
-// $.ajax(settings).done(function (response) {
-//   console.log(response);
-// });
       }
+
+
     });
+
 
 
     </script>
 
-      <!-- <div class="cardContainer" style="width:30%;height:30%">
-      <div class="card small">
-     <div class="card-image waves-effect waves-block waves-light">
-       <img class="" src="images/bmw-test.jpg" style="width:450px;height:213px">
-     </div>
-     <div class="card-content">
-       <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-       <p><a href="#">This is a link</a></p>
-     </div>
-     <div class="card-reveal">
-       <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-       <p>Here is some more information about this product that is only revealed once clicked on.</p>
-     </div>
-      </div>
-    </div> -->
     <div id="outer-wrapper">
 
 
@@ -119,6 +90,7 @@
         <!-- <div class="modal-header"> -->
         <!-- </div> -->
         <div class="modal-body">
+
   
             <div class="form-style-10">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -141,15 +113,36 @@
     </div>
 </form>
 </div>
+
+
+                        <!-- <div id="register" class="registrationForm">
+                            <form  id ="leadform"  action="mysuperscript.php" autocomplete="on">
+                                <h1> Dealer Registration </h1>
+                                <p>
+                                    <label for="name" class="name" data-icon="u">Your Name</label>
+                                    <input id="name" name="name" required="required" type="text" placeholder="Manish"/>
+                                </p>
+                                <p>
+                                    <label for="location" class="location" data-icon="" > Your Location</label>
+                                    <input id="location" name="location" required="required" type="text" placeholder="Mumbai"/>
+                                </p>
+                                <p>
+                                    <label for="mobile" class="mobile" data-icon="" > Mobile Number</label>
+                                    <input id="mobile" name="mobile" required="required" type="text"  placeholder="9029222282"/>
+                                </p>
+                            <button id="leadformbutton"  data-dismiss="modal" > Sign Up </button>
+                            </form>
+                            </div> -->
+
                         </div>
-            
+
                     </div>
-                </div>  
+                </div>
         </div>
 
 
 
-        <!-- Inner Wrapper -->
+
 
         <div id="inner-wrapper" style="background: #161209 url(http://imgd2.aeplcdn.com/0x0/cw/static/landing-banners/home-top-banner.jpg) no-repeat right top;background-size: cover;height: 580px; padding-top: 1px;position: relative;">
 
@@ -171,7 +164,7 @@
           </div>
 
 
-          
+
 
 
 
@@ -182,51 +175,31 @@
                 Find Your Dream Car
             </h1>
             <div class="searchWrapper">
-              <div class="new-used-search-container" style="margin: 0 auto;width: 605px;">
-                <div class="new-used-search" style="width: 470px; float: left; background: #fff;">
-                  <div class="used-search position-rel" style="width: 262px;float: left;position: relative;">
-                      <input type="text" placeholder="Type to select city name, e.g. Mumbai" id="usedCarsList" class="ui-autocomplete-input blur" autocomplete="off"
-                      style="width: 100%;padding: 8px 10px;padding: 10px 10px 9px 9px;height: 38px;color: #666;font-size: 13px;" >
-                      <span class="fa fa-spinner fa-spin position-abt pos-right10 pos-top15 text-black" style="display:none"></span>
-                  </div>
-
-                  <div class="used-budget-box" style="    width: 206px;
-    float: left;
-    color: #a8afb3;
-    position: relative;">
-                  <div id="minMaxContainer" class="" style="    padding: 9px 13px 9px 13px;
-    cursor: pointer;">
-                  <span class="leftfloat" id="budgetBtn" overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 150px;
-    text-align: left;">Choose your budget</span>
-                  <span id="upDownArrow" class="rightfloat fa fa-angle-down" transition: all 0.5s ease-in-out 0s; font-size: 30px;" style="float:right;"></span>
-                                    <div class="clear" style="clear:both"></div>
-                                </div>
-                                <div id="budgetListContainer" class="hide" style="    position: absolute;
-    z-index: 2;
-    width: 100%;
-    margin: -1px 0 0 1px;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-top: 0;
-    border-radius: 0 0 2px 2px;">
-                                    <div id="userBudgetInput">
-                                        <input type="text" class="priceBox" id="minInput" placeholder="Min" maxlength="5">
-                                        <input type="text" class="priceBox" id="maxInput" placeholder="Max" maxlength="5">
-                                        <div class="cw-blackbg-tooltip cw-blackbg-tooltip-used text-center hide">Max budget should be greater than Min budget.</div>
-                                    </div>
-
-
-                                </div>
-                            </div>
+              <div class="new-used-search-container" style="margin: 0 auto;width: 605px;height: auto;z-index:1000;">
+              <div class="cityselectContainer"style="float:left;width:25% ">
+                <select class="selectpicker" name="Slect City">
+                  <option value="">City</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Pune">Pune</option>
+                </select>
+              </div>
+              <div class="fuelselectContainer"style="float:left;width:25%; ">
+                <select class="selectpicker" name="Select Fuel">
+                  <option value="">Fuel Type</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Pune">Pune</option>
+                </select>
+              </div>
+              <div class="budgetselectContainer"style="float:left;width:25% ; ">
+                <select class="selectpicker" name="Select Budget">
+                  <option value="">Budget</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Pune">Pune</option>
+                </select>
               </div>
               <div class="findBtn" style="float:left;">
-                            <button id="btnFindCar" class="text-uppercase btn btn-orange btn-md font16 back" style="padding: 8px 20px 8px 20px;
-    padding: 8px 20px 7px 20px \0/;
-    border-radius: 0 2px 2px 0;font-size:16px;text-transform: uppercase;">Find Car</button>
-                        </div>
+              <button id="btnFindCar" class="text-uppercase btn btn-orange btn-md font16 back" style="padding: 8px 20px 9px 20px ;border-radius: 0 2px 2px 0;font-size:16px;text-transform: uppercase;">Find Car</button>
+              </div>
               </div>
             </div>
           </div>
@@ -413,7 +386,7 @@
     <script>
         autoComplete();
     </script>
-    
+
 
     </body>
 
