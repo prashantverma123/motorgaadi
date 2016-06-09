@@ -45,6 +45,7 @@
 
 
        $(document).ready(function() {
+         featuredCars();
         $('#leadformbutton').click(function(){
           debugger;
           capturelead();
@@ -91,7 +92,7 @@
         <!-- </div> -->
         <div class="modal-body">
 
-  
+
             <div class="form-style-10">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h1>Sign Up Now!<span>Sign up and join to get leads!</span></h1>
@@ -207,113 +208,9 @@
 
         </div>
         <section id="featured" class="block background-color-grey-dark equal-height">
-            <div class="container">
+            <div class="container" id="featuredcarsContainer">
                 <header><h2>Featured</h2></header>
-                <div class="row">
-                    
-                    <div class="col-md-4 col-sm-4">
-                        <div class="item featured">
-                            <div class="image">
-                                <div class="quick-view"><i class="fa fa-eye"></i><span>Quick View</span></div>
-                                <a href="car-item-detail.html">
-                                    <!-- <div class="overlay">
-                                        <div class="inner">
-                                            <div class="content">
-                                                <h4>Description</h4>
-                                                <p>BMW was established as a business entity following a restructuring of the Rapp Motorenwerke aircraft manufacturing firm in 1917.</p>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <div class="item-specific">
-                                        <span>Used Car</span>
-                                    </div>
-                                    <div class="icon">
-                                      <span class="glyphicon glyphicon-heart" style="margin-top:10px; width:43%"></span>
-                                    </div>
-                                    <img src="images/bmw-test.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="wrapper" style="height:96px;">
-                              <div class="title-price-container">
-                                <div class="item-name" style="float:left;"><a href="car-item-detail.html"><p style="margin:0px;color:#1d1d1d;font-weight:700;font-size:14px">Mercedes Benz Class A</p></a>
-                                  <span><p style="margin:0px;color:#a1a1a1;font-weight:700;font-size:12px;text-align:left" >2012, 30,000 Kms</p></span>
-                                </div>
-                                <div class="item-price" style="float:right;"> <p style="margin:0px;color:#1d1d1d;font-weight:700;font-size:14px">Rs 20 Lakh</p></div>
-                                <div style="clear:both"></div>
-                              </div>
-                              <div style="clear:both"></div>
-                              <div class="location-owner-type-container"style="margin-top:5px;text-align:left" >
-                                  <div class="item-location" style="float:left">
-                                    <span class=" glyphicon glyphicon-map-marker" style="float:left;color:#a1a1a1" ></span>
-                                    <span style="float:left;margin-left:5px"><p style="color:#a1a1a1"> Sakinaka</p></span>
-                                  </div>
-                                  <div class="item-owner"style="float:left;margin-left:14px;">
-                                    <span class="glyphicon glyphicon-user" style="float:left;color:#a1a1a1" ></span>
-                                    <span style="float:left;margin-left:5px"><p style="color:#a1a1a1"> 1st Owner</p></span>
-                                  </div>
-                                  <div class="item-type"style="float:left;margin-left:14px;">
-                                    <span class=" glyphicon glyphicon-tint" style="float:left;color:#a1a1a1" ></span>
-                                    <span style="float:left;margin-left:5px"><p style="color:#a1a1a1"> Petrol</p></span>
-                                  </div>
-                              </div>
 
-                            </div>
-                        </div>
-                        <!-- /.item-->
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                        <div class="item featured">
-                            <div class="image">
-                                <div class="quick-view"><i class="fa fa-eye"></i><span>Quick View</span></div>
-                                <a href="car-item-detail.html">
-                                    <!-- <div class="overlay">
-                                        <div class="inner">
-                                            <div class="content">
-                                                <h4>Description</h4>
-                                                <p>BMW was established as a business entity following a restructuring of the Rapp Motorenwerke aircraft manufacturing firm in 1917.</p>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <div class="item-specific">
-                                        <span>Used Car</span>
-                                    </div>
-                                    <div class="icon">
-                                      <span class="glyphicon glyphicon-heart" style="margin-top:10px; width:43%"></span>
-                                    </div>
-                                    <img src="images/bmw-test.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="wrapper" style="height:96px;">
-                              <div class="title-price-container">
-                                <div class="item-name" style="float:left;"><a href="car-item-detail.html"><p style="margin:0px;color:#1d1d1d;font-weight:700;font-size:14px">Mercedes Benz Class A</p></a>
-                                  <span><p style="margin:0px;color:#a1a1a1;font-weight:700;font-size:12px;text-align:left" >2012, 30,000 Kms</p></span>
-                                </div>
-                                <div class="item-price" style="float:right;"> <p style="margin:0px;color:#1d1d1d;font-weight:700;font-size:14px">Rs 20 Lakh</p></div>
-                                <div style="clear:both"></div>
-                              </div>
-                              <div style="clear:both"></div>
-                              <div class="location-owner-type-container"style="margin-top:5px;text-align:left" >
-                                  <div class="item-location" style="float:left">
-                                    <span class=" glyphicon glyphicon-map-marker" style="float:left;color:#a1a1a1" ></span>
-                                    <span style="float:left;margin-left:5px"><p style="color:#a1a1a1"> Sakinaka</p></span>
-                                  </div>
-                                  <div class="item-owner"style="float:left;margin-left:14px;">
-                                    <span class="glyphicon glyphicon-user" style="float:left;color:#a1a1a1" ></span>
-                                    <span style="float:left;margin-left:5px"><p style="color:#a1a1a1"> 1st Owner</p></span>
-                                  </div>
-                                  <div class="item-type"style="float:left;margin-left:14px;">
-                                    <span class=" glyphicon glyphicon-tint" style="float:left;color:#a1a1a1" ></span>
-                                    <span style="float:left;margin-left:5px"><p style="color:#a1a1a1"> Petrol</p></span>
-                                  </div>
-                              </div>
-
-                            </div>
-                        </div>
-                        <!-- /.item-->
-                    </div>
-
-                </div>
             </div>
         </section>
         <!--end Featured-->
@@ -334,6 +231,90 @@
     <script type="text/javascript" src="assets/js/maps.js"></script>
     <script>
         autoComplete();
+    </script>
+
+    <script>
+    // code for creating fetured cars cardetails_get
+
+    function featuredCars(){
+      $.ajax({
+         type        : 'GET',
+         url         : "http://localhost/startup/api/index.php/api/featuredcars",
+         dataType    : 'json',
+         encode          : true
+     })
+
+         .done(function(data) {
+           console.log(data);
+           createCards(data.message)
+         });
+    }
+    function formatPrice(price) {
+      var val = parseFloat(price);
+    if(val >= 10000000) val = (val/10000000).toFixed(2) + ' Cr';
+    else if(val >= 100000) val = (val/100000).toFixed(2) + ' Lakhs';
+    else if(val >= 1000) val = (val/1000).toFixed(2) + ' K';
+    return val;
+    }
+    function formatdistance(price) {
+      var val = parseFloat(price)/1000;
+      if(val >= 10000000) val = (val/10000000).toFixed(2) + ' cr';
+      else if(val >= 100000) val = (val/100000).toFixed(2) + ' lakh';
+      else if(val >= 1000) val = (val/1000).toFixed(2) + ' k';
+
+    return val + ' kms';
+    }
+    function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+    function createCards(data){
+      var sHtml = '<div class="row">';
+      for (var i = 0; i < data.length; i++) {
+      sHtml += '<div class="col-md-4 col-sm-4" id="'+data[i].carcatid.toLowerCase().replace(/\s+/g, '')+'_'+ data[i].id+'">'+
+          '<div class="item featured">'+
+              '<div class="image">'+
+                  '<div class="quick-view"><i class="fa fa-eye"></i><span>Quick View</span></div>'+
+                  '<a href="car-item-detail.html">'+
+                      '<div class="item-specific">'+
+                            '<span>'+ data[i].carcatid +'</span>'+
+                      '</div>'+
+                        '<div class="icon">'+
+                        '<span class="glyphicon glyphicon-heart" style="margin-top:10px; width:43%"></span>'+
+                        '</div>'+
+                        '<img src="images/bmw-test.jpg" alt="">'+
+                    '</a>'+
+                '</div>'+
+                '<div class="wrapper" style="height:96px;">'+
+                '<div class="title-price-container">'+
+                    '<div class="item-name" style="float:left;"><a href="car-item-detail.html"><p style="margin:0px;color:#1d1d1d;font-weight:700;font-size:14px">'+data[i].makeid+ ' '+data[i].modelid +'</p></a>'+
+                      '<span><p style="margin:0px;color:#a1a1a1;font-weight:700;font-size:12px;text-align:left" >'+data[i].modelyear+','+formatdistance(data[i].kms)+'</p></span>'+
+                    '</div>'+
+                    '<div class="item-price" style="float:right;"> <p style="margin:0px;color:#1d1d1d;font-weight:700;font-size:14px">Rs '+ formatPrice(data[i].highprice)+'</p></div>'+
+                    '<div style="clear:both"></div>'+
+                  '</div>'+
+                  '<div style="clear:both"></div>'+
+                  '<div class="location-owner-type-container"style="margin-top:5px;text-align:left" >'+
+                      '<div class="item-location" style="float:left">'+
+                        '<span class=" glyphicon glyphicon-map-marker" style="float:left;color:#a1a1a1" ></span>'+
+                        '<span style="float:left;margin-left:5px"><p style="color:#a1a1a1"> '+data[i].regcity+'</p></span>'+
+                    '</div>'+
+                      '<div class="item-owner"style="float:left;margin-left:14px;">'+
+                        '<span class="glyphicon glyphicon-user" style="float:left;color:#a1a1a1" ></span>'+
+                        '<span style="float:left;margin-left:5px"><p style="color:#a1a1a1"> 1st Owner</p></span>'+
+                      '</div>'+
+                      '<div class="item-type"style="float:left;margin-left:14px;">'+
+                        '<span class=" glyphicon glyphicon-tint" style="float:left;color:#a1a1a1" ></span>'+
+                        '<span style="float:left;margin-left:5px"><p style="color:#a1a1a1"> Petrol</p></span>'+
+                      '</div>'+
+                    '  </div>'+
+                  '  </div>'+
+                '</div>'+
+            '</div>' ;
+        }
+        sHtml +='</div>' ;
+        $('#featuredcarsContainer').append(sHtml);
+    }
+
     </script>
 
 

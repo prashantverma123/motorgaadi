@@ -120,6 +120,72 @@ class Api extends REST_Controller{
 
       }
 
+      function carinventory_get(){
+
+
+        $this->load->model('Model_Carinventory');
+        $inventory= $this->Model_Carinventory->get_all();
+
+        if(isset($inventory)){
+          $this->response(array('status'=>'success','message'=>$inventory));
+        }
+
+        else{
+          $this->response(array('status'=>'failure','message'=>"No Inventory !!!"),REST_Controller::HTTP_NOT_FOUND);
+        }
+
+      }
+      function featuredcars_get(){
+
+
+        $this->load->model('Model_Carinventory');
+        $inventory= $this->Model_Carinventory->get_all();
+        $featured = array_slice($inventory,0,3);
+        if(isset($inventory)){
+          $this->response(array('status'=>'success','message'=>$featured));
+        }
+
+        else{
+          $this->response(array('status'=>'failure','message'=>"No Inventory !!!"),REST_Controller::HTTP_NOT_FOUND);
+        }
+
+      }
+      function cardetails_get(){
+
+
+        $this->load->model('Model_Carinventory');
+        $inventory= $this->Model_Carinventory->get_many_by(array(
+          'id' =>1
+          ));
+
+        if(isset($inventory)){
+          $this->response(array('status'=>'success','message'=>$inventory));
+        }
+
+        else{
+          $this->response(array('status'=>'failure','message'=>"No Inventory !!!"),REST_Controller::HTTP_NOT_FOUND);
+        }
+
+      }
+
+      function carsearch_get(){
+
+
+        $this->load->model('Model_Carinventory');
+        $inventory= $this->Model_Carinventory->get_many_by(array(
+          'id' =>1
+          ));
+
+        if(isset($inventory)){
+          $this->response(array('status'=>'success','message'=>$inventory));
+        }
+
+        else{
+          $this->response(array('status'=>'failure','message'=>"No Inventory !!!"),REST_Controller::HTTP_NOT_FOUND);
+        }
+
+      }
+
       function leadForm_post(){
         $this->load->library('form_validation');
         $this->form_validation->set_data($this->post());
