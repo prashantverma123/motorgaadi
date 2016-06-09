@@ -1,3 +1,26 @@
+<?php
+$myId = $_GET['id'];
+$row = array();
+$url = 'http://localhost/startup/api/index.php/api/cardetails/'.$myId;
+// echo $url;
+$cURL = curl_init();
+
+curl_setopt($cURL, CURLOPT_URL, $url);
+curl_setopt($cURL, CURLOPT_HTTPGET, true);
+curl_setopt($cURL, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($cURL, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'Accept: application/json'
+));
+
+
+$result = curl_exec($cURL);
+$json = json_decode($result, true);
+$row =  $json['message'][0];
+// echo gettype($row);
+curl_close($cURL);
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -59,6 +82,21 @@
 
     <script>
     $(document).ready(function(){
+      console.log(<?php echo $myId; ?>);
+      function getProductDetails(){
+        $.ajax({
+           type        : 'GET',
+           url         : "http://localhost/startup/api/index.php/api/cardetails",
+           dataType    : 'json',
+           encode          : true
+       })
+
+           .done(function(data) {
+             console.log(data);
+             var jsondata = JSON.stringify(data.message)
+
+           });
+      }
   $('.bxslider').bxSlider({
     minSlides: 3,
     maxSlides: 4,
@@ -197,7 +235,7 @@
                     <img src="assets/img/items/location40.png" style=""/><br>Location <br><?php echo $row['ownerarea']; ?>
                 </div>
                 <div class="col-md-2" style="margin-left: -20px">
-                    <img src="assets/img/items/Crashed Car-40.png" style=""/><br>Insurance
+                    <img src="assets/img/items/Crashed Car-40.png" style=""/><br>Insurance<br><?php echo $row['insurance']; ?>
                 </div>
             </div><!--end of first row-->
                             <br>
@@ -252,7 +290,7 @@
                             </div>
                             <div class="row" style="    border-bottom: 1px solid #ccc;width: 102%;margin-top: 1%">
                                 <div class="col-md-5" style="margin-left: 5%;">Color</div>
-                                <div class="col-md-5"><?php echo $row['color']; ?></div>
+                                <div class="col-md-5"> <div class="" style="width:15px;height:15px; background-color:<?php echo $row['color']; ?> "></div> </div>
                                 <div class="clear"></div>
                             </div>
                             <div class="row" style="    border-bottom: 1px solid #ccc;width: 102%;margin-top: 1%">

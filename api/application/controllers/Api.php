@@ -151,11 +151,11 @@ class Api extends REST_Controller{
 
       }
       function cardetails_get(){
-
+        $myid =$this->uri->segment(3);
 
         $this->load->model('Model_Carinventory');
         $inventory= $this->Model_Carinventory->get_many_by(array(
-          'id' =>1
+          'id' =>$myid
           ));
 
         if(isset($inventory)){

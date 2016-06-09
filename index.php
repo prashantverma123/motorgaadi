@@ -274,7 +274,7 @@
           '<div class="item featured">'+
               '<div class="image">'+
                   '<div class="quick-view"><i class="fa fa-eye"></i><span>Quick View</span></div>'+
-                  '<a href="car-item-detail.html">'+
+                  '<a href="car-item-detail.php?id='+ data[i].id+'">'+
                       '<div class="item-specific">'+
                             '<span>'+ data[i].carcatid +'</span>'+
                       '</div>'+
@@ -286,7 +286,7 @@
                 '</div>'+
                 '<div class="wrapper" style="height:96px;">'+
                 '<div class="title-price-container">'+
-                    '<div class="item-name" style="float:left;"><a href="car-item-detail.html"><p style="margin:0px;color:#1d1d1d;font-weight:700;font-size:14px">'+data[i].makeid+ ' '+data[i].modelid +'</p></a>'+
+                    '<div class="item-name" style="float:left;"><a href="car-item-detail.php?id='+ data[i].id+'"><p style="margin:0px;color:#1d1d1d;font-weight:700;font-size:14px">'+data[i].makeid+ ' '+data[i].modelid +'</p></a>'+
                       '<span><p style="margin:0px;color:#a1a1a1;font-weight:700;font-size:12px;text-align:left" >'+data[i].modelyear+','+formatdistance(data[i].kms)+'</p></span>'+
                     '</div>'+
                     '<div class="item-price" style="float:right;"> <p style="margin:0px;color:#1d1d1d;font-weight:700;font-size:14px">Rs '+ formatPrice(data[i].highprice)+'</p></div>'+
