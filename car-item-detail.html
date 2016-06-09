@@ -3,6 +3,35 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/jquery-ui.css" rel="stylesheet">
+
+	<style>
+		* { box-sizing: border-box; }
+		fieldset { padding: 1em; }
+		label {
+			display: block;
+			margin: 1em 0 0 0;
+		}
+		#buttonset {
+			display: inline-block;
+			margin-top: 0.3em;
+		}
+		span label {
+			display: inline-block;
+			margin: 0;
+		}
+		select, input[type="text"], .ui-spinner, fieldset > div > button {
+			width: 250px;
+			font-size: 1.1em;
+		}
+		.ui-buttonset .ui-button { width: 125px; }
+		input[type="text"] { padding: 0.2em; }
+		button { margin-top: 1em; }
+		.ui-selectmenu-button { margin-top: 0.2em; }
+		.ui-selectmenu-button span.ui-selectmenu-text {
+			padding: 0.2em 0 0.2em 1em;
+		}
+	</style>
     <link type="text/javascript" href="assets/css/bootstrap.min.css">
     <link href="assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -17,12 +46,17 @@
     <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" type="text/css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/i18n/datepicker-es.js"></script>
     <script src="assets/bxslider/jquery.bxslider.min.js"></script>
     <link href="assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <title>Motorgaddi</title>
   </head>
   <body onunload="" class="map-fullscreen page-homepage navigation-off-canvas" id="page-top">
+
     <script>
     $(document).ready(function(){
   $('.bxslider').bxSlider({
@@ -32,6 +66,30 @@
     adaptiveHeight: true,
     slideMargin: 10
     });
+
+	function checkDate( date ) {
+		var isWeekday = date.getDay() > 0 && date.getDay() < 6;
+		if ( $( "#doctor" ).val() === "Smith" ) {
+			return [ isWeekday && date.getDay() != 2 ];
+		} else {
+			return [ isWeekday ];
+		}
+	};
+	$( "#date" ).datepicker({
+		beforeShowDay: checkDate
+	}).datepicker( "option", $.datepicker.regional[ "" ] );
+	$( "button" ).button({
+		icons: {
+			primary: "ui-icon-calendar"
+		}
+	});
+
+	$( "#bookingform" ).on( "submit", function( event ) {
+    event.preventDefault();
+		var data = $("#bookingform :input").serializeArray();
+    console.log(event);
+    debugger;
+	});
 
 //     jQuery(function($) {
 //   function fixDiv() {
@@ -239,7 +297,7 @@
                 </div>
                 </div>
                 </div>
-                <div class="leadFormContainer col-md-3" id="leadFormContainer" style="background:#FFFFFF;height:80%;float:right;margin:0;padding:0;margin-right:5%;position:relative;top:-31%;border: 1px solid ">
+                <div class="leadFormContainer col-md-3" id="leadFormContainer" style="background:#dedede;height:80%;float:right;margin:0;padding:0;margin-right:5%;position:relative;top:-31%;box-sizing: border-box;">
                 <div class="priceContainer" style="height:6%;background-color:rgba(60,63,64,0.9);text-align:center">
                   <p style="color:#efefef;font-size:25px;font-weight:700;">
                     Rs 10,000,00
@@ -247,15 +305,59 @@
                 </div>
                 <!-- <hr style="margin-bottom:1px;margin-top:5px"> -->
 
-                <div class="appointmentForm" style="background:#FFFFFF">
+                <div class="appointmentForm" style="">
                   <div class="formTitle" style="text-align:center;font-size:26px;font-weight:800">
                     <p>
                       Book Appointment
                     </p>
                   </div>
-                  <form class="" >
-                    Hi
-                  </form>
+                  <form method="POST" id="bookingform" action="">
+                    	<fieldset style="margin:3%;">
+                    		<div style="border">
+                    			<label for="date">Date:</label>
+                    			<input type="text" name="date" id="date" style="border:1px groove">
+                    		</div>
+                    		<div>
+                    			<label for="phoneno">Phone No:</label>
+                    			<input type="text" name="phoneno" id="phoneno" style="border:1px groove">
+                    		</div>
+                        <div>
+                    			<label for="email">Email Id:</label>
+                    			<input type="text" name="email" id="email"style="border:1px groove">
+                    		</div>
+                        <div>
+                    			<label for="location">Location</label>
+                    			<input type="text" name="location" id="location" style="border:1px groove">
+                    		</div>
+                    		<div>
+                    			<label for="comment">Comments</label>
+                    			<!-- <input type="text" id="days" name="days"> -->
+                          <textarea name="comment" id="comment"  rows="4" cols="40" style="border:1px groove"></textarea>
+                    		</div>
+                        <div>
+                          <div class="col-md-3" style="margin-left: 5%" >
+                              <div>
+
+                                  <label class="checkbox-inline" style="margin-left: 10px;margin-top: 20px"><input type="checkbox" name="loan" value="2"><strong>Loan</strong></label>
+                              </div>
+                          </div>
+                          <div class="col-md-4" style="margin-left: -5%">
+                              <div>
+                                  <label class="checkbox-inline" style="margin-left: 10px;margin-top: 20px"><input type="checkbox" name="ins" value="2"><strong>Insurance</strong></label>
+                              </div>
+                          </div>
+
+                          <div class="col-md-2" style="margin-left: -5%">
+                              <div>
+                                  <label class="checkbox-inline" style="margin-left: 10px;margin-top: 20px"><input type="checkbox" name="of" value="2"><strong>Offer's</strong></label>
+                              </div>
+                          </div>
+                        </div>
+                    		<div>
+                    			<button style="padding: 0;border: none;background: none;margin-left: 30px;margin-top: 20px;background-color:#36B6FF;width:80%;height: 3em;">Make Appointment</button>
+                    		</div>
+                    	</fieldset>
+                    </form>
                 </div>
                 </div>
           </div>
