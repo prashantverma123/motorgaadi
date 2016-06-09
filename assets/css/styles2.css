@@ -1,0 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Russo+One|Play|Orbitron:500,400,700);
+body{
+	font-size: 12px;
+	background : #000000 url("../image/wallpaper.jpg") no-repeat fixed center;
+	background-position: top;
+	background-size: 100% auto;
+	font-family: 'Orbitron', sans-serif;
+}
