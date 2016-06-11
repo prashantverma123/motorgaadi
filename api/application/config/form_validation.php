@@ -54,4 +54,15 @@ $config = array(
         array('field'=>'insurance','label'=>'mobile','rules'=>'trim|max_length[50]'),
 
     ),
+
+    'bookingform_post'=>array(
+        array('field'=>'email','label'=>'email','rules'=>'trim|max_length[250]'),
+        array('field'=>'name','label'=>'name','rules'=>'trim|required|max_length[250]'),
+        array('field'=>'mobile','label'=>'mobile','rules'=>'trim|required|max_length[50]'),
+        array('field'=>'location','label'=>'mobile','rules'=>'trim|required|max_length[50]'),
+        array('field'=>'loan','label'=>'mobile','rules'=>'trim|max_length[50]'),
+        array('field'=>'offers','label'=>'mobile','rules'=>'trim|max_length[50]'),
+        array('field'=>'insurance','label'=>'mobile','rules'=>'trim|max_length[50]'),
+
+    ),
 );

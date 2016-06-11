@@ -107,8 +107,8 @@ class Api extends REST_Controller{
       function carfueltype_get(){
 
 
-        $this->load->model('Model_CarVariant');
-        $carfueltype= $this->Model_CarVariant->get_all();
+        $this->load->model('Model_Fueltype');
+        $carfueltype= $this->Model_Fueltype->get_all();
 
         if(isset($carfueltype)){
           $this->response(array('status'=>'success','message'=>$carfueltype));
@@ -169,11 +169,18 @@ class Api extends REST_Controller{
       }
 
       function carsearch_get(){
-
+          $mycity =$this->uri->segment(3);
+          $myfuel =$this->uri->segment(4);
+          $myLowbudget =$this->uri->segment(5);
+          $myHighbudget =$this->uri->segment(6);
 
         $this->load->model('Model_Carinventory');
         $inventory= $this->Model_Carinventory->get_many_by(array(
-          'id' =>1
+          'ownercity' =>$mycity,
+          'fuelid'=> $myfuel,
+          'highprice >='=> $myLowbudget,
+          'highprice Between'=> $myLowbudget,
+          'highprice <='=> $myHighbudget,
           ));
 
         if(isset($inventory)){
@@ -203,6 +210,27 @@ class Api extends REST_Controller{
          }
          else{
            $this->response(array('status'=>'failure','message'=>REST_Controller::HTTP_NOT_FOUND));
+         }
+      }
+
+      function bookappointment_post(){
+        //var_dump($this->put());
+        $this->load->library('form_validation');
+        $this->form_validation->set_data($this->post());
+         if($this->form_validation->run('signup_post') != false){
+            $this->load->model('Model_Carbooking');
+            $client = $this->post();
+            $id = $this->Model_Carbooking->insert($client);
+            if(!$id){
+                $this->response(
+                    array('status'=>'failure','message'=>'An unexpected error occurred on db !'),REST_Controller::HTTP_INTERNAL_SERVER_ERROR);
+            }else{
+               $this->response(array('status'=>'success','message'=>'Created'));
+            }
+
+         }
+         else{
+           $this->response(array('status'=>'failure','message'=>$this->form_validation->get_errors_as_array()),REST_Controller::HTTP_NOT_FOUND);
          }
       }
 

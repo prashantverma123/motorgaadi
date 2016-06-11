@@ -4,13 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  *
  */
-class Model_Signup extends MY_Model
+class Model_Carbooking extends MY_Model
 {
-  protected $_table = 'p1iqp_mg_car_client_signup';
+  protected $_table = 'p1iqp_mg_car_appointment';
   protected $primary_key = 'id';
   protected $return_type = 'array';
-  protected $after_get = array('remove_sesitive_data');
-  protected $before_create = array('prep_data');
+  // protected $after_get = array('remove_sesitive_data');
+  // protected $before_create = array('prep_data');
   // protected $before_update = array('update_timestamp');
 
   protected  function remove_sesitive_data($key){

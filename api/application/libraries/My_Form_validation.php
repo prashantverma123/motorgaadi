@@ -6,7 +6,7 @@
  * Date: 10/01/2016
  * Time: 2:37
  */
-class My_Form_validation extends CI_Form_validation{
+class MY_Form_validation extends CI_Form_validation{
 
     function __construct($rules = array()){
         parent::__construct($rules);

@@ -29,8 +29,12 @@
             background-color: #30ACCE;
           }
           .back:hover{
-            background-color: #00C8FF;
+            background-color: #red;
           }
+          .header .wrapper .navigation-items .wrapper .user-area a:hover, .header .wrapper .navigation-items .wrapper .user-area span:hover {
+            color: #1d1d1d;
+    }
+
         </style>
 
     </head>
@@ -46,10 +50,19 @@
 
        $(document).ready(function() {
          featuredCars();
+         fueltypeoptiongenerator();
+         console.log($('.ui-slider').length);
+
+        $('#btnFindCar').click(function() {
+               searchCars();
+           });
         $('#leadformbutton').click(function(){
           debugger;
           capturelead();
         });
+        //  $('.selectpicker').selectpicker();
+
+
 
       function capturelead(){
         debugger;
@@ -76,7 +89,6 @@
     });
 
 
-
     </script>
 
     <div id="outer-wrapper">
@@ -95,7 +107,7 @@
 
             <div class="form-style-10">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h1>Sign Up Now!<span>Sign up and join to get leads!</span></h1>
+              <h1>Want to sell car!<span>Sign up and we will see your car!</span></h1>
               <form>
               <div class="section"><span>1</span>Name &amp; Address</div>
               <div class="inner-wrap">
@@ -116,24 +128,6 @@
 </div>
 
 
-                        <!-- <div id="register" class="registrationForm">
-                            <form  id ="leadform"  action="mysuperscript.php" autocomplete="on">
-                                <h1> Dealer Registration </h1>
-                                <p>
-                                    <label for="name" class="name" data-icon="u">Your Name</label>
-                                    <input id="name" name="name" required="required" type="text" placeholder="Manish"/>
-                                </p>
-                                <p>
-                                    <label for="location" class="location" data-icon="" > Your Location</label>
-                                    <input id="location" name="location" required="required" type="text" placeholder="Mumbai"/>
-                                </p>
-                                <p>
-                                    <label for="mobile" class="mobile" data-icon="" > Mobile Number</label>
-                                    <input id="mobile" name="mobile" required="required" type="text"  placeholder="9029222282"/>
-                                </p>
-                            <button id="leadformbutton"  data-dismiss="modal" > Sign Up </button>
-                            </form>
-                            </div> -->
 
                         </div>
 
@@ -145,31 +139,33 @@
 
 
 
-        <div id="inner-wrapper" style="background: #161209 url(http://imgd2.aeplcdn.com/0x0/cw/static/landing-banners/home-top-banner.jpg) no-repeat right top;background-size: cover;height: 580px; padding-top: 1px;position: relative;">
 
-    <div class="header">
+
+    <div class="header" style="background:#36B5FE">
         <div class="wrapper">
                   <div class="brand">
-                      <a href="index-real-estate.html"><img src="images/mg-logo.jpg" alt="logo"></a>
+                      <a href="index.php"><img src="images/mg-logo.jpg" alt="logo"></a>
                   </div>
                   <nav class="navigation-items">
                       <div class="wrapper">
                             <ul class="main-navigation navigation-top-header"></ul>
-                          <ul class="user-area">
-                              <li><a href="sign-in.html">Sign In</a></li>
-                              <li><a data-toggle="modal" data-target="#myModal"><strong>Register</strong></a></li>
+                          <ul class="user-area" >
+                              <li><a href="used-cars-listing.php" style="font-size:14px !important"><strong>Cars</strong></a></li>
+                              <!-- <li><a href="sign-in.html">Sign In</a></li> -->
+                              <li><a data-toggle="modal" data-target="#myModal" style="font-size:14px !important"><strong>Sell</strong></a></li>
+                              <li><a data-toggle="modal" data-target="#myModal" style="font-size:14px !important"><strong>Contact Us</strong></a></li>
                           </ul>
                       </div>
                   </nav>
 
           </div>
+        </div>
 
 
 
 
 
-
-
+        <div id="inner-wrapper" style="background: #161209 url(http://www.cfau-pd.net/data/wallpapers/10/WDF_583618.jpg) no-repeat right top;background-size: cover;height: 380px; padding-top: 1px;position: relative;">
 
           <div class="search-box-container" style="margin-top: 125px;text-align: center;">
             <h1 class="text-uppercase" style="font-weight: 400;text-transform: uppercase;font-size: 35px;color:#fff">
@@ -178,35 +174,36 @@
             <div class="searchWrapper">
               <div class="new-used-search-container" style="margin: 0 auto;width: 605px;height: auto;z-index:1000;">
               <div class="cityselectContainer"style="float:left;width:25% ">
-                <select class="selectpicker" name="Slect City">
-                  <option value="">City</option>
+                <select class="" id="cityselect" name="Slect City" style="width:100%">
+                  <option value="">Selct City</option>
                   <option value="Mumbai">Mumbai</option>
                   <option value="Pune">Pune</option>
                 </select>
               </div>
               <div class="fuelselectContainer"style="float:left;width:25%; ">
-                <select class="selectpicker" name="Select Fuel">
-                  <option value="">Fuel Type</option>
-                  <option value="Mumbai">Mumbai</option>
-                  <option value="Pune">Pune</option>
-                </select>
+
               </div>
               <div class="budgetselectContainer"style="float:left;width:25% ; ">
-                <select class="selectpicker" name="Select Budget">
-                  <option value="">Budget</option>
-                  <option value="Mumbai">Mumbai</option>
-                  <option value="Pune">Pune</option>
+                <select class=""  id="budgetselect" name="Slect City" style="width:100%">
+                  <option value="">Selct Budget</option>
+                  <option value="500000">1Lakh-5Lakh</option>
+                  <option value="1000000">5Lakh-10Lakh</option>
+                  <option value="1500000">10Lakh-15Lakh</option>
+                  <option value="2000000">15Lakh-20Lakh</option>
+                  <option value="20000000">20Lakh +</option>
+
+
                 </select>
               </div>
               <div class="findBtn" style="float:left;">
-              <button id="btnFindCar" class="text-uppercase btn btn-orange btn-md font16 back" style="padding: 8px 20px 9px 20px ;border-radius: 0 2px 2px 0;font-size:16px;text-transform: uppercase;">Find Car</button>
+              <button id="btnFindCar" class="text-uppercase btn btn-orange btn-md font16 back" style="padding: 8px 20px 7px 20px ;border-radius: 0 2px 2px 0;font-size:16px;text-transform: uppercase;">Find Car</button>
               </div>
               </div>
             </div>
           </div>
         </div>
 
-        </div>
+
         <section id="featured" class="block background-color-grey-dark equal-height">
             <div class="container" id="featuredcarsContainer">
                 <header><h2>Featured</h2></header>
@@ -224,7 +221,7 @@
     <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script>
+    <!-- <script type="text/javascript" src="assets/js/bootstrap-select.min.js"></script> -->
     <script type="text/javascript" src="assets/js/jquery.hotkeys.js"></script>
     <script type="text/javascript" src="assets/js/jquery.nouislider.all.min.js"></script>
     <script type="text/javascript" src="assets/js/custom.js"></script>
@@ -234,12 +231,39 @@
     </script>
 
     <script>
-    // code for creating fetured cars cardetails_get
+    var BASE_URL = "http://localhost/startup/api/index.php/api";
+
+    function cityoptiongenerator() {
+
+    }
+
+    function fueltypeoptiongenerator() {
+
+      $.ajax({
+         type        : 'GET',
+         url         : BASE_URL+"/carfueltype",
+         dataType    : 'json',
+         encode          : true
+     })
+
+         .done(function(data) {
+           var fuel = data.message;
+           console.log(fuel.length);
+           var sHtml = '<select class="selectpicker" id="fuelselect" name="Select Fuel" style="width:100%"><option value=""> Select Fuel</option>';
+           for (var i = 0; i < fuel.length; i++) {
+            sHtml += '<option value="'+ fuel[i].fuel_type +'">'+ fuel[i].fuel_type +'</option>'
+           }
+           sHtml += '</select>';
+
+           $('.fuelselectContainer').append(sHtml);
+         });
+    }
+
 
     function featuredCars(){
       $.ajax({
          type        : 'GET',
-         url         : "http://localhost/startup/api/index.php/api/featuredcars",
+         url         : BASE_URL+ "/featuredcars",
          dataType    : 'json',
          encode          : true
      })
@@ -249,6 +273,7 @@
            createCards(data.message)
          });
     }
+
     function formatPrice(price) {
       var val = parseFloat(price);
     if(val >= 10000000) val = (val/10000000).toFixed(2) + ' Cr';
@@ -256,6 +281,7 @@
     else if(val >= 1000) val = (val/1000).toFixed(2) + ' K';
     return val;
     }
+
     function formatdistance(price) {
       var val = parseFloat(price)/1000;
       if(val >= 10000000) val = (val/10000000).toFixed(2) + ' cr';
@@ -315,6 +341,18 @@
         $('#featuredcarsContainer').append(sHtml);
     }
 
+    function searchCars(){
+    var city =  $( "#cityselect option:selected" ).val();
+    var fuel =  $( "#fuelselect option:selected" ).val();
+    var budget =  $( "#budgetselect option:selected" ).val();
+
+    var postdata = 'city='+city+'&'+'fuel='+fuel+'&'+'budget='+budget;
+
+    if (city!="" && fuel!=""&&budget!="") {
+      window.location.href = "http://localhost/startup/search-listing.php?"+postdata;
+    }
+
+    }
     </script>
 
 

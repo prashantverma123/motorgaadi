@@ -157,7 +157,7 @@ curl_close($cURL);
 
       <div class="headerContainer col-md-12" style="background-color: #36B5FE;;height:100%">
           <div class="brandContainer col-md-3" style="padding:0;float:left">
-              <a href="index.html"><img src="assets/img/newlogo.png" alt="logo" style="width: 20%;margin-left:1%;margin-top:0.5%;"></a>
+              <a href="index.php"><img src="assets/img/newlogo.png" alt="logo" style="width: 20%;margin-left:1%;margin-top:0.5%;"></a>
           </div>
           <div class="navigationPanelContainer col-md-6" style="float:right">
             <nav class="navbar " style="float:right">
